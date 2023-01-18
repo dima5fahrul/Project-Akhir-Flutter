@@ -1,27 +1,27 @@
 import 'package:get/get.dart';
-import 'package:tugasakhir/pages/account/account_screen.dart';
-import 'package:tugasakhir/pages/authentication/login_screen.dart';
-import 'package:tugasakhir/pages/authentication/register_screen.dart';
+import 'package:tugasakhir/pages/account/main/account_screen.dart';
+import 'package:tugasakhir/pages/authentication/login/main/login_screen.dart';
+import 'package:tugasakhir/pages/authentication/register/main/register_screen.dart';
 import 'package:tugasakhir/controller/name_routes.dart';
-import 'package:tugasakhir/pages/home/home_screen.dart';
+import 'package:tugasakhir/pages/home/main/home_screen.dart';
 
 class AppRoutes {
   static final pages = [
     GetPage(
       name: RouteName.login,
-      page: () => LoginScreen(),
+      page: () => const LoginScreen(),
     ),
     GetPage(
       name: RouteName.register,
-      page: () => RegisterScreen(),
+      page: () => const RegisterScreen(),
     ),
     GetPage(
       name: RouteName.home,
-      page: () => HomeScreen(),
+      page: () => const HomeScreen(),
     ),
     GetPage(
       name: RouteName.account,
-      page: () => AccountScreen(),
+      page: () => const AccountScreen(),
     ),
   ];
 }
