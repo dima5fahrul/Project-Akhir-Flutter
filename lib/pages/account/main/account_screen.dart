@@ -57,7 +57,8 @@ class _AccountScreenState extends State<AccountScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(top: 50, right: 20, left: 20),
+          margin:
+              const EdgeInsets.only(top: 50, right: 20, left: 20, bottom: 20),
           child: Column(
             children: [
               Stack(
@@ -103,6 +104,60 @@ class _AccountScreenState extends State<AccountScreen> {
                   bgSecondary: _bgSecondary, bgPrimary: _bgPrimary),
               FollowersSection(black: _black),
               LinksSkillsSection(black: _black),
+              Container(
+                margin: const EdgeInsets.only(top: 20),
+                child: Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'About',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          color: _black,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: _black,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 30),
+                alignment: Alignment.bottomCenter,
+                child: Column(
+                  children: [
+                    Text(
+                      '© 2023. All rights reserved.',
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
+                        color: _black,
+                      ),
+                    ),
+                    Text(
+                      'Made with ❤️ by Dimas Fahrul',
+                      style: TextStyle(
+                        fontSize: 8,
+                        fontWeight: FontWeight.w400,
+                        color: _black,
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
