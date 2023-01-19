@@ -52,7 +52,7 @@ class RecentJobsSection extends StatelessWidget {
           // ------------------------------recent Jobs---------------------------------
           ListView.builder(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: 4,
             itemBuilder: (context, index) {
               return GestureDetector(
@@ -68,7 +68,7 @@ class RecentJobsSection extends StatelessWidget {
                       BoxShadow(
                         color: HexColor('#000000').withOpacity(0.25),
                         blurRadius: 4,
-                        offset: Offset(0, 4),
+                        offset: const Offset(0, 4),
                       ),
                     ],
                   ),

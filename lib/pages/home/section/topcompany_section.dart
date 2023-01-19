@@ -40,7 +40,7 @@ class TopCompanySection extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 10),
                   child: TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'View All',
                       style: TextStyle(
                         fontSize: 12,
@@ -108,7 +108,7 @@ class TopCompanySection extends StatelessWidget {
                       ),
                       // ------------------------------category text---------------------------------
                       Container(
-                        margin: const EdgeInsets.only(top: 89, left: 24),
+                        margin: const EdgeInsets.only(top: 88, left: 25),
                         height: 30,
                         child: Center(
                           child: Text(
@@ -123,7 +123,7 @@ class TopCompanySection extends StatelessWidget {
                       ),
                       // ------------------------------applied text---------------------------------
                       Container(
-                        margin: const EdgeInsets.only(top: 89, left: 100),
+                        margin: const EdgeInsets.only(top: 88, left: 100),
                         height: 30,
                         child: Center(
                           child: Text(

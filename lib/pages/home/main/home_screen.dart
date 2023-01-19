@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               SearchSection(bgPrimary: _bgPrimary, controller: _controller),
-              BannerSection(),
+              const BannerSection(),
               Container(
                 margin: const EdgeInsets.only(top: 10, left: 22),
                 height: 36,
