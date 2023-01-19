@@ -11,7 +11,8 @@ import 'package:tugasakhir/pages/account/section/links_section.dart';
 import 'package:tugasakhir/pages/account/section/nameprofile_section.dart';
 
 class AccountScreen extends StatefulWidget {
-  const AccountScreen({super.key});
+  final String? name;
+  const AccountScreen({Key? key, @required this.name}) : super(key: key);
 
   @override
   State<AccountScreen> createState() => _AccountScreenState();
@@ -23,6 +24,13 @@ class _AccountScreenState extends State<AccountScreen> {
   final _bgSecondary = HexColor("#59B4B5");
   final _black = HexColor("#383838");
   var temp = '';
+  String? _name;
+
+  @override
+  void initState() {
+    super.initState();
+    _name = widget.name;
+  }
 
   Future<dynamic> _logout() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -70,7 +78,27 @@ class _AccountScreenState extends State<AccountScreen> {
                   ),
                 ],
               ),
-              NameProfileSection(black: _black),
+              Container(
+                margin: const EdgeInsets.only(top: 15),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 4),
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        _name.toString(),
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.w600,
+                          color: _black,
+                        ),
+                      ),
+                    ),
+                    JobSection(black: _black),
+                    const TitleSection(),
+                  ],
+                ),
+              ),
               ButtonEditSection(
                   bgSecondary: _bgSecondary, bgPrimary: _bgPrimary),
               FollowersSection(black: _black),

@@ -5,6 +5,7 @@ import 'package:loading_overlay/loading_overlay.dart';
 import 'package:tugasakhir/controller/authentications/dio_http.dart';
 import 'package:tugasakhir/controller/preferences/hexcolor_convert.dart';
 import 'package:tugasakhir/controller/routes/name_routes.dart';
+import 'package:tugasakhir/pages/authentication/register/section/register_component_section.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -114,21 +115,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      color: _bgPrimary,
-                      width: 180,
-                      height: 115,
-                      child: Image.asset("assets/logos/logo_splash.png"),
-                    ),
+                    LogoSection(bgPrimary: _bgPrimary),
                     Container(
                       child: Column(
                         children: [
                           // -------------------------------Name---------------------------
-                          Container(
-                            margin: const EdgeInsets.only(top: 20),
-                            alignment: Alignment.topLeft,
-                            child: const Text('Name'),
-                          ),
+                          NameSection(),
                           Container(
                             height: 50,
                             margin: const EdgeInsets.only(top: 5),
@@ -151,11 +143,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                           // --------------------------------Username---------------------------
-                          Container(
-                            margin: const EdgeInsets.only(top: 20),
-                            alignment: Alignment.topLeft,
-                            child: const Text('Username'),
-                          ),
+                          UsernameSection(),
                           Container(
                             height: 50,
                             margin: const EdgeInsets.only(top: 5),
@@ -178,11 +166,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                           // --------------------------------Email---------------------------
-                          Container(
-                            margin: const EdgeInsets.only(top: 20),
-                            alignment: Alignment.topLeft,
-                            child: const Text('Email'),
-                          ),
+                          EmailSection(),
                           Container(
                             height: 50,
                             margin: const EdgeInsets.only(top: 5),
@@ -205,11 +189,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                           // --------------------------------Password---------------------------
-                          Container(
-                            alignment: Alignment.topLeft,
-                            margin: const EdgeInsets.only(top: 10),
-                            child: const Text('Password'),
-                          ),
+                          PasswordSection(),
                           Container(
                             height: 50,
                             margin: const EdgeInsets.only(top: 5),
@@ -269,23 +249,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     // --------------------------------Already have account?---------------------------
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text('Already have account?'),
-                          TextButton(
-                            onPressed: () {
-                              Get.toNamed(RouteName.login);
-                            },
-                            child: Text(
-                              'Login',
-                              style: TextStyle(color: _bgSecondary),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    LoginTextButtonSection(bgSecondary: _bgSecondary),
                   ],
                 ),
               ),

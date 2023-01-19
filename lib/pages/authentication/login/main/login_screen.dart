@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tugasakhir/controller/authentications/dio_http.dart';
 import 'package:tugasakhir/controller/preferences/hexcolor_convert.dart';
 import 'package:tugasakhir/controller/routes/name_routes.dart';
+import 'package:tugasakhir/pages/authentication/login/section/login_component_section.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -22,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   late bool _passwordVissible = false;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
+  late String? name;
   late String? email;
   late String? password;
   late bool _isLoading = false;
@@ -45,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setString('user-token', response.data['token']);
 
-      Get.toNamed(RouteName.home);
+      Get.toNamed(RouteName.home, arguments: <String, dynamic>{'name': name});
     } on DioError catch (dioError) {
       var message = '';
 
@@ -100,20 +102,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      color: _bgPrimary,
-                      width: 180,
-                      height: 115,
-                      child: Image.asset("assets/logos/logo_splash.png"),
-                    ),
+                    LogoSection(bgPrimary: _bgPrimary),
                     Container(
                       child: Column(
                         children: [
-                          Container(
-                            alignment: Alignment.topLeft,
-                            margin: const EdgeInsets.only(top: 46),
-                            child: const Text('Email'),
-                          ),
+                          EmailSection(),
                           Container(
                             height: 50,
                             margin: const EdgeInsets.only(top: 5),
@@ -135,11 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
-                          Container(
-                            alignment: Alignment.topLeft,
-                            margin: const EdgeInsets.only(top: 10),
-                            child: const Text('Password'),
-                          ),
+                          PasswordSection(),
                           Container(
                             height: 50,
                             margin: const EdgeInsets.only(top: 5),
@@ -196,29 +185,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
-                          Container(
-                            width: 260,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Get.toNamed(RouteName.register);
-                              },
-                              child: const Text('SignUp'),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: _bgPrimary,
-                                foregroundColor: _bgSecondary,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                              ),
-                            ),
-                          ),
+                          RegisterButtonSection(
+                              bgPrimary: _bgPrimary, bgSecondary: _bgSecondary),
                         ],
                       ),
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 10),
-                      child: const Text('Lupa kata sandi?'),
-                    ),
+                    ForgetPasswordSection(),
                   ],
                 ),
               ),
