@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:tugasakhir/controller/button_toggle.dart';
+import 'package:tugasakhir/controller/preferences/button_toggle.dart';
 import '../section/banner.dart';
 import '../section/search_section.dart';
 import '../section/recentjobs_section.dart';
 import '../section/topcompany_section.dart';
-import '../../../controller/name_routes.dart';
-import '../../../controller/hexcolor_convert.dart';
+import '../../../controller/routes/name_routes.dart';
+import '../../../controller/preferences/hexcolor_convert.dart';
 import '../../../models/company_model.dart';
 import '../../../models/job_model.dart';
 

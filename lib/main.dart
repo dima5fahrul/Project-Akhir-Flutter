@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tugasakhir/controller/routes.dart';
+import 'package:tugasakhir/controller/routes/routes.dart';
 import 'package:tugasakhir/pages/splash_screen.dart';
 
 void main() => runApp(const MyApp());

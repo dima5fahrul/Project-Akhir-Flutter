@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tugasakhir/controller/name_routes.dart';
+import 'package:tugasakhir/controller/routes/name_routes.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,10 +16,17 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> autoLogin() async {
-    await Future.delayed(
-      const Duration(seconds: 4),
-    );
-    Get.toNamed(RouteName.login);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String? userToken = prefs.getString('user-token');
+    if (userToken != null) {
+      Future.delayed(const Duration(seconds: 3), () {
+        Get.toNamed(RouteName.home);
+      });
+    } else {
+      Future.delayed(const Duration(seconds: 3), () {
+        Get.toNamed(RouteName.login);
+      });
+    }
   }
 
   @override

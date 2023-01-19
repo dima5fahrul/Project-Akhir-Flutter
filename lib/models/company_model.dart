@@ -29,12 +29,6 @@ class CompanyModel {
 }
 
 final random = Random();
-// attribute dari job_model.dart
-final indexjobs = random.nextInt(jobs.length);
-final randomJob = jobs[indexjobs];
-// attribute dari category_model.dart
-final indexcategories = random.nextInt(categories.length);
-final randomCategory = categories[indexcategories];
 
 final List<CompanyModel> items = [
   CompanyModel(
@@ -42,12 +36,12 @@ final List<CompanyModel> items = [
     logo: 'assets/logos/tokopedia.png',
     logoBg: 'assets/logos/tokopedia_bg.png',
     bg: 'assets/images/green.png',
-    // mengambil data dari job_model.dart
-    job: randomJob.name,
+    // mengambil data random dari job_model.dart
+    job: jobs[random.nextInt(jobs.length)].name,
     contract: 2,
     apllicant: 100,
-    // mengambil data dari category_model.dart
-    category: randomCategory.name,
+    // mengambil data random dari category_model.dart
+    category: categories[random.nextInt(categories.length)].name,
     location: 'Jakarta',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem.',
@@ -57,10 +51,10 @@ final List<CompanyModel> items = [
     logo: 'assets/logos/asus.png',
     logoBg: 'assets/logos/asus_bg.png',
     bg: 'assets/images/blue.png',
-    job: randomJob.name,
+    job: jobs[random.nextInt(jobs.length)].name,
     contract: 1,
     apllicant: 50,
-    category: randomCategory.name,
+    category: categories[random.nextInt(categories.length)].name,
     location: 'Jakarta',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem.',
@@ -70,10 +64,10 @@ final List<CompanyModel> items = [
     logo: 'assets/logos/grab.png',
     logoBg: 'assets/logos/grab_bg.png',
     bg: 'assets/images/green.png',
-    job: randomJob.name,
+    job: jobs[random.nextInt(jobs.length)].name,
     contract: 2,
     apllicant: 100,
-    category: randomCategory.name,
+    category: categories[random.nextInt(categories.length)].name,
     location: 'Jakarta',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem.',
@@ -83,10 +77,10 @@ final List<CompanyModel> items = [
     logo: 'assets/logos/shopee.png',
     logoBg: 'assets/logos/shopee_bg.png',
     bg: 'assets/images/red.png',
-    job: randomJob.name,
+    job: jobs[random.nextInt(jobs.length)].name,
     contract: 1,
     apllicant: 50,
-    category: randomCategory.name,
+    category: categories[random.nextInt(categories.length)].name,
     location: 'Jakarta',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem.',
@@ -96,10 +90,10 @@ final List<CompanyModel> items = [
     logo: 'assets/logos/pln.png',
     logoBg: 'assets/logos/pln_bg.png',
     bg: 'assets/images/yellow.png',
-    job: randomJob.name,
+    job: jobs[random.nextInt(jobs.length)].name,
     contract: 2,
     apllicant: 100,
-    category: randomCategory.name,
+    category: categories[random.nextInt(categories.length)].name,
     location: 'Jakarta',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem.',
@@ -109,10 +103,10 @@ final List<CompanyModel> items = [
     logo: 'assets/logos/j&t.png',
     logoBg: 'assets/logos/j&t_bg.png',
     bg: 'assets/images/red.png',
-    job: randomJob.name,
+    job: jobs[random.nextInt(jobs.length)].name,
     contract: 1,
     apllicant: 50,
-    category: randomCategory.name,
+    category: categories[random.nextInt(categories.length)].name,
     location: 'Jakarta',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem.',
@@ -122,10 +116,10 @@ final List<CompanyModel> items = [
     logo: 'assets/logos/mcd.png',
     logoBg: 'assets/logos/mcd_bg.png',
     bg: 'assets/images/red.png',
-    job: randomJob.name,
+    job: jobs[random.nextInt(jobs.length)].name,
     contract: 1,
     apllicant: 50,
-    category: randomCategory.name,
+    category: categories[random.nextInt(categories.length)].name,
     location: 'Jakarta',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem.',
@@ -135,10 +129,10 @@ final List<CompanyModel> items = [
     logo: 'assets/logos/pertamina.png',
     logoBg: 'assets/logos/pertamina_bg.png',
     bg: 'assets/images/red.png',
-    job: randomJob.name,
+    job: jobs[random.nextInt(jobs.length)].name,
     contract: 1,
     apllicant: 50,
-    category: randomCategory.name,
+    category: categories[random.nextInt(categories.length)].name,
     location: 'Jakarta',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem.',
@@ -148,10 +142,10 @@ final List<CompanyModel> items = [
     logo: 'assets/logos/telkom.png',
     logoBg: 'assets/logos/telkom_bg.png',
     bg: 'assets/images/red.png',
-    job: randomJob.name,
+    job: jobs[random.nextInt(jobs.length)].name,
     contract: 1,
     apllicant: 50,
-    category: randomCategory.name,
+    category: categories[random.nextInt(categories.length)].name,
     location: 'Jakarta',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem.',
@@ -161,10 +155,10 @@ final List<CompanyModel> items = [
     logo: 'assets/logos/traveloka.png',
     logoBg: 'assets/logos/traveloka_bg.png',
     bg: 'assets/images/blue.png',
-    job: randomJob.name,
+    job: jobs[random.nextInt(jobs.length)].name,
     contract: 1,
     apllicant: 50,
-    category: randomCategory.name,
+    category: categories[random.nextInt(categories.length)].name,
     location: 'Jakarta',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc sit amet aliquam lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl sit amet lorem.',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../controller/hexcolor_convert.dart';
+import '../../../controller/preferences/hexcolor_convert.dart';
 
 class NameProfileSection extends StatelessWidget {
   const NameProfileSection({

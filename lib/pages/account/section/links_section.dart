@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tugasakhir/controller/hexcolor_convert.dart';
+import 'package:tugasakhir/controller/preferences/hexcolor_convert.dart';
 
 class LinksSkillsSection extends StatelessWidget {
   const LinksSkillsSection({

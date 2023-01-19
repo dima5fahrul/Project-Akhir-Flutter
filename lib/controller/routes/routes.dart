@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:tugasakhir/pages/account/main/account_screen.dart';
 import 'package:tugasakhir/pages/authentication/login/main/login_screen.dart';
 import 'package:tugasakhir/pages/authentication/register/main/register_screen.dart';
-import 'package:tugasakhir/controller/name_routes.dart';
+import 'package:tugasakhir/controller/routes/name_routes.dart';
 import 'package:tugasakhir/pages/home/main/home_screen.dart';
 
 class AppRoutes {
