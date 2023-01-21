@@ -11,25 +11,20 @@ import 'package:tugasakhir/pages/account/section/links_section.dart';
 import 'package:tugasakhir/pages/account/section/nameprofile_section.dart';
 
 class AccountScreen extends StatefulWidget {
-  final String? name;
-  const AccountScreen({Key? key, @required this.name}) : super(key: key);
-
   @override
   State<AccountScreen> createState() => _AccountScreenState();
 }
 
 class _AccountScreenState extends State<AccountScreen> {
   // variabel warna convert dari hexcolor
-  final _bgPrimary = HexColor("#F9F9F9");
+  final _bgPrimary = HexColor("#FFFFFF");
   final _bgSecondary = HexColor("#59B4B5");
   final _black = HexColor("#383838");
   var temp = '';
-  String? _name;
 
   @override
   void initState() {
     super.initState();
-    _name = widget.name;
   }
 
   Future<dynamic> _logout() async {
@@ -87,7 +82,7 @@ class _AccountScreenState extends State<AccountScreen> {
                       margin: const EdgeInsets.only(bottom: 4),
                       alignment: Alignment.topLeft,
                       child: Text(
-                        _name.toString(),
+                        'Dimas Fahrul',
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w600,

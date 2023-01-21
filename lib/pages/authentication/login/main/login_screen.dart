@@ -17,13 +17,12 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   // variabel warna convert dari hexcolor
-  final _bgPrimary = HexColor("#F9F9F9");
+  final _bgPrimary = HexColor("#FFFFFF");
   final _bgSecondary = HexColor("#59B4B5");
   // variabel untuk autentikasi
   final _formKey = GlobalKey<FormState>();
   late bool _passwordVissible = false;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  late String? name;
   late String? email;
   late String? password;
   late bool _isLoading = false;
@@ -47,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setString('user-token', response.data['token']);
 
-      Get.toNamed(RouteName.home, arguments: <String, dynamic>{'name': name});
+      Get.toNamed(RouteName.home);
     } on DioError catch (dioError) {
       var message = '';
 

@@ -4,6 +4,7 @@ import 'package:tugasakhir/pages/authentication/login/main/login_screen.dart';
 import 'package:tugasakhir/pages/authentication/register/main/register_screen.dart';
 import 'package:tugasakhir/controller/routes/name_routes.dart';
 import 'package:tugasakhir/pages/home/main/home_screen.dart';
+import 'package:tugasakhir/pages/list/main/list_screen.dart';
 
 class AppRoutes {
   static final pages = [
@@ -21,7 +22,11 @@ class AppRoutes {
     ),
     GetPage(
       name: RouteName.account,
-      page: () => const AccountScreen(),
+      page: () => AccountScreen(),
+    ),
+    GetPage(
+      name: RouteName.list,
+      page: () => ListScreen(),
     ),
   ];
 }

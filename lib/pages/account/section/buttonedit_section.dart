@@ -21,10 +21,10 @@ class ButtonEditSection extends StatelessWidget {
       height: 45,
       child: ElevatedButton(
         onPressed: () {},
-        child: Text(
+        child: const Text(
           'Edit Profile',
           style: TextStyle(
-            fontSize: 21,
+            fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
         ),

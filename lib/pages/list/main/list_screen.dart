@@ -1,22 +1,17 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tugasakhir/controller/preferences/button_toggle.dart';
-import '../section/banner.dart';
-import '../section/search_section.dart';
-import '../section/recentjobs_section.dart';
-import '../section/topcompany_section.dart';
-import '../../../controller/routes/name_routes.dart';
-import '../../../controller/preferences/hexcolor_convert.dart';
-import '../../../models/job_model.dart';
+import 'package:tugasakhir/controller/preferences/hexcolor_convert.dart';
+import 'package:tugasakhir/models/job_model.dart';
+import 'package:tugasakhir/pages/home/section/search_section.dart';
+import 'package:tugasakhir/pages/list/section/company_list_section.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
+class ListScreen extends StatefulWidget {
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ListScreen> createState() => _ListScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ListScreenState extends State<ListScreen> {
   bool selected = false;
   final _bgPrimary = HexColor("#FFFFFF");
   final _bgSecondary = HexColor("#59B4B5");
@@ -30,36 +25,31 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: _bgPrimary,
         leading: IconButton(
-          padding: const EdgeInsets.only(left: 20),
-          onPressed: () {},
-          icon: Image.asset('assets/icons/setting_icon.png'),
+          padding: const EdgeInsets.only(top: 20, bottom: 19),
+          onPressed: () {
+            Get.back();
+          },
+          icon: Image.asset('assets/icons/back_icon.png'),
         ),
         flexibleSpace: FlexibleSpaceBar(
           centerTitle: true,
-          title: Image.asset("assets/logos/logo.png", width: 100),
-          titlePadding: const EdgeInsets.all(5.0),
-        ),
-        actions: [
-          IconButton(
-            padding: const EdgeInsets.only(right: 20, top: 5),
-            icon: Image.asset(
-              "assets/icons/account_icon.png",
+          title: Text(
+            "Search Result",
+            style: TextStyle(
+              color: _black,
+              fontSize: 17,
+              fontWeight: FontWeight.w500,
             ),
-            onPressed: () {
-              Get.toNamed(RouteName.account);
-            },
           ),
-        ],
+        ),
         elevation: 0,
       ),
-      // ------------------------------body---------------------------------
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.only(bottom: 20),
           child: Column(
             children: [
               SearchSection(bgPrimary: _bgPrimary, controller: _controller),
-              const BannerSection(),
               Container(
                 margin: const EdgeInsets.only(top: 10, left: 22),
                 height: 36,
@@ -109,8 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: jobs.length,
                 ),
               ),
-              TopCompanySection(black: _black, bgPrimary: _bgPrimary),
-              RecentJobsSection(black: _black),
+              CompanyListSection(black: _black),
             ],
           ),
         ),

@@ -15,7 +15,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  final _bgPrimary = HexColor("#F9F9F9");
+  final _bgPrimary = HexColor("#FFFFFF");
   final _bgSecondary = HexColor("#59B4B5");
 
   var _passwordVissible = false;
